@@ -25,16 +25,16 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task1.V14.Lib
                     if (x != -1.7)
 
                     {
-                        File.WriteAllText(path, Convert.ToString(y) + Environment.NewLine);
+                        File.AppendAllText(path, Convert.ToString(y) + Environment.NewLine);
                     }
                     else
                     {
-                        File.WriteAllText(path, Convert.ToString(0) + Environment.NewLine);
+                        File.AppendAllText(path, Convert.ToString(0) + Environment.NewLine);
                     }
                 }
                 else
                 {
-                    File.WriteAllText(path, Convert.ToString(y));
+                    File.AppendAllText(path, Convert.ToString(y));
                 }
             }
             return path;
