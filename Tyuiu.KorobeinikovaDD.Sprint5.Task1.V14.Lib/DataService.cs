@@ -18,14 +18,22 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task1.V14.Lib
            for ( int x = startValue; x <= stopValue; x++)
             {
                 y = Math.Round(Math.Sin(x) / (x + 1.7) - Math.Cos(x) * 4 * x - 6, 2);
-               
-                if ( x != -1.7)
+
+                if (x != stopValue)
                 {
-                    File.WriteAllText(path, Convert.ToString(y));
+                    if (x != -1.7)
+
+                    {
+                        File.WriteAllText(path, Convert.ToString(y) + Environment.NewLine);
+                    }
+                    else
+                    {
+                        File.WriteAllText(path, Convert.ToString(0) + Environment.NewLine);
+                    }
                 }
                 else
                 {
-                    File.WriteAllText(path, Convert.ToString(0));
+                    File.WriteAllText(path, Convert.ToString(y));
                 }
             }
             return path;
