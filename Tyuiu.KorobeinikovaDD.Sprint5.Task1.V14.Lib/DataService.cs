@@ -1,0 +1,34 @@
+﻿using tyuiu.cources.programming.interfaces.Sprint5;
+namespace Tyuiu.KorobeinikovaDD.Sprint5.Task1.V14.Lib
+{
+    public class DataService : ISprint5Task1V14
+    {
+        public string SaveToFileTextData(int startValue, int stopValue)
+        {
+           string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask0.txt" });
+           double y;
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+           if (fileExists)
+            {
+                File.Delete(path);
+            }
+
+           for ( int x = startValue; x <= stopValue; x++)
+            {
+                y = Math.Round(Math.Sin(x) / (x + 1.7) - Math.Cos(x) * 4 * x - 6, 2);
+               
+                if ( x != -1.7)
+                {
+                    File.WriteAllText(path, Convert.ToString(y));
+                }
+                else
+                {
+                    File.WriteAllText(path, Convert.ToString(0));
+                }
+            }
+            return path;
+        }
+    }
+}
