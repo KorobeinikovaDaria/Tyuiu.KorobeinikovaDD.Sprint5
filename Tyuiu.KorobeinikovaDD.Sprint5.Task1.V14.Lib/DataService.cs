@@ -6,16 +6,17 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task1.V14.Lib
         public string SaveToFileTextData(int startValue, int stopValue)
         {
            string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask0.txt" });
-           double y;
+           
 
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
-           if (fileExists)
+
+            if (fileExists)
             {
                 File.Delete(path);
             }
-
-           for ( int x = startValue; x <= stopValue; x++)
+            double y;
+            for ( int x = startValue; x <= stopValue; x++)
             {
                 y = Math.Round(Math.Sin(x) / (x + 1.7) - Math.Cos(x) * 4 * x - 6, 2);
 
