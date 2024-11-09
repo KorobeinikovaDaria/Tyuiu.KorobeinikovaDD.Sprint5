@@ -36,11 +36,11 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task2.V27.Lib
                 {
                     if ( j != columns - 1)
                     {
-                        str = str + matrix[i, j];
+                        str = str + matrix[i, j] + ";";
                     }
                     else
                     {
-                        str = str + matrix[i, j];                 
+                        str = str + matrix[i, j] + ";";                 
                     }
                 }
 
