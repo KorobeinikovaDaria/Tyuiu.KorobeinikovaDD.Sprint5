@@ -32,17 +32,17 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task2.V27.Lib
 
             for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < columns; j++)
-                {
-                    if ( j != columns - 1)
+               for (int j = 0; j < columns; j++)
                     {
-                        str = str + matrix[i, j] + ";";
+                     if ( j != columns - 1)
+                        {
+                            str = str + matrix[i, j] + ";";
+                        }
+                     else
+                        {
+                            str = str + matrix[i, j];                 
+                        }
                     }
-                    else
-                    {
-                        str = str + matrix[i, j];                 
-                    }
-                }
 
                 if (i != rows - 1)
                 {
@@ -52,7 +52,7 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task2.V27.Lib
                 {
                     File.AppendAllText(path, str);
                 }
-                str = ";";
+                str = "";
             }
             return path;
         }
