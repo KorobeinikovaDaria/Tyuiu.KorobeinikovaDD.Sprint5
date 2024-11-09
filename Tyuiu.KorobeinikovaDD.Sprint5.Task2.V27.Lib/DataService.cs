@@ -52,7 +52,7 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task2.V27.Lib
                 {
                     File.AppendAllText(path, str);
                 }
-                str = ";"
+                str = ";";
             }
             return path;
         }
