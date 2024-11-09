@@ -40,7 +40,7 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task2.V27.Lib
                     }
                     else
                     {
-                        str = str + matrix[i, j] + ";";                 
+                        str = str + matrix[i, j];                 
                     }
                 }
 
