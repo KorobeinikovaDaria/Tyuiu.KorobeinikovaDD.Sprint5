@@ -8,10 +8,10 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task5.V7.Lib
             double res = 1;
             using (StreamReader reader = new StreamReader(path))
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+
+                while ((reader.ReadLine()) != null)
                 {
-                    double n = Convert.ToDouble(line);
+                    double n = Convert.ToDouble(reader.ReadLine());
                     if ( n % 1 == 0)
                         for (int i = 1; i <= n; i++)
                         {
