@@ -5,7 +5,7 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task4.V28.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CheckedExistsFile()
         {
             DataService ds = new DataService();
             string path = @"C:\DataSprint5\InPutDataFileTask4V28.txt";

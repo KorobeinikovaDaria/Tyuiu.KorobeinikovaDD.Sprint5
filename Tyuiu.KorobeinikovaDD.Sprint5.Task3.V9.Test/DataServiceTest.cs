@@ -5,7 +5,7 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task3.V9.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CheckedExistsFile()
         {
             DataService ds = new DataService();
             string path = @"C:\Users\Дарья\AppData\Local\Temp\OutPutFileTask3.bin";
