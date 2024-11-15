@@ -15,13 +15,14 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task5.V7.Lib
                     while (line != null)
                     {
                         double n = Convert.ToDouble(line);
-                        for ( int i = 1; i <= n; i++)
+                        for (int i = 1; i <= n; i++)
                         {
                             res *= i;
                         }
                         break;
-                    } 
+                    }
                 }
+                else { res = 0; }
                 return res;
             }
         }
