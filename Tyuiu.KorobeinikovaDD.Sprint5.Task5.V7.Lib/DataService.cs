@@ -1,4 +1,6 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using System.Globalization;
+using System.Reflection.Metadata.Ecma335;
+using System.Windows.Markup;
 using tyuiu.cources.programming.interfaces.Sprint5;
 namespace Tyuiu.KorobeinikovaDD.Sprint5.Task5.V7.Lib
 {
@@ -6,22 +8,38 @@ namespace Tyuiu.KorobeinikovaDD.Sprint5.Task5.V7.Lib
     {
         public double LoadFromDataFile(string path)
         {
+
+            string[] lines = File.ReadAllLines(path);
+            bool foundInteger = false;
+            int firstInteger = 0;
             double res = 1;
-            using StreamReader sr = new StreamReader(path);
+            foreach (var line in lines)
             {
-                var line = sr.ReadLine();
-                while ( line != null)
+                
+                string[] parts = line.Split(new[] { ' ', 't' }, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var part in parts)
                 {
-                    double n = Convert.ToDouble(line);
-                    for ( int i = 1; i <= n; i++)
+                   
+                    if (int.TryParse(part, out int number))
                     {
-                        res *= i;
+                        if (!foundInteger)
+                        {
+                            firstInteger = number;
+                            foundInteger = true;
+                            break; 
+                        }
                     }
-                    break;
                 }
+                if (foundInteger) break; 
+            }
+            for (int i = 1; i <= firstInteger; i++)
+            {
+                res *= i;
             }
             return res;
         }
     }
-    }
+}
+
 
